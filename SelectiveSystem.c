@@ -132,6 +132,7 @@ void home(void) {
 	printf("\n                             5.退出系统");
 	printf("\n                                                      ");
 	printf("\n                        请输入：");
+	fflush(stdin);
 	scanf("%d",&h);
 	system("cls");
 	switch(h){
@@ -147,10 +148,11 @@ void home(void) {
 		case 4:
 			statistic();
 			break;
-		default:
+		case 5:
 			system("cls");
-			printf("BYE!");
-			break;
+			printf("test");
+			printf("\n\n再见!");
+			return;
 	}
 }
 /*开始选课*/
@@ -175,6 +177,7 @@ void choose(void){
 		system("pause");
 		system("cls");
 		home();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	//录入姓名信息 
 	x++;
@@ -198,6 +201,7 @@ void choose(void){
 		system("pause");
 		system("cls");
 		home();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	//录入课程信息
 	sel[x].c = h;
@@ -206,6 +210,7 @@ void choose(void){
 	system("pause");
 	system("cls");
 	home();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 }
 /*删除选课记录*/
 void delete_sel(int q){//删除第q+1条记录 
@@ -269,6 +274,7 @@ void cou_operate(void) {
 			break;
 		case 3:
 			show_cou();
+			break;
 		case 4:
 			home();
 			break; 
@@ -285,6 +291,7 @@ void statistic(void){
 		system("pause");
 		system("cls");
 		home();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	} else {
 		printf("\n\n                        选课记录 %d 条：",x+1);
 		int m;
@@ -300,6 +307,7 @@ void statistic(void){
 		system("pause");
 		system("cls");
 		home();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	
 }
@@ -322,6 +330,7 @@ void input_stu(void){
 		printf("打开文件失败！");
 		system("cls");
 		stu_operate();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	printf("学号\t姓名\t性别\t年龄\t系别\t班级\t联系方式\n");
 	while(1){
@@ -349,6 +358,7 @@ void input_stu(void){
 	renew_stu();
 	system("cls");
 	stu_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*查询学生信息*/
 void search_stu(void){
@@ -387,6 +397,7 @@ void search_stu_id(void){
 			system("pause");
 			system("cls");
 			stu_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	system("cls");
@@ -394,6 +405,7 @@ void search_stu_id(void){
 	system("pause");
 	system("cls");
 	stu_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*姓名查询*/
 void search_stu_name(void){
@@ -413,6 +425,7 @@ void search_stu_name(void){
 			system("pause");
 			system("cls");
 			stu_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	system("cls");
@@ -420,6 +433,7 @@ void search_stu_name(void){
 	system("pause");
 	system("cls");
 	stu_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*显示所有学生信息*/
 void show_stu(void){
@@ -429,6 +443,7 @@ void show_stu(void){
 		system("pause");
 		system("cls");
 		stu_operate();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	system("cls");
 	printf("\n\n\t学号\t姓名\t性别\t年龄\t系别\t班级\t联系方式");
@@ -496,12 +511,14 @@ void edit_stu(void){
 			system("pause"); 
 			system("cls");
 			stu_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	printf("\n此学号不存在！\n");
 	system("pause");
 	system("cls");
 	stu_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 }
 /*删除学生信息*/
 void delete_stu(void){
@@ -531,6 +548,7 @@ void delete_stu(void){
 				system("pause"); 
 				system("cls");
 				stu_operate();
+				return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 			} 
 			
 			int k;
@@ -552,12 +570,14 @@ void delete_stu(void){
 			system("pause"); 
 			system("cls");
 			stu_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	printf("\n此学号不存在！\n");
 	system("pause");
 	system("cls");
 	stu_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 }
 //--------------------------------------课程信息插入--------------------------------------
 void input_cou(void){
@@ -576,6 +596,7 @@ void input_cou(void){
 		printf("打开文件失败！");
 		system("cls");
 		cou_operate();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	printf("代码\t名称\t性质\t总学时\t学分\t开课学期\n");
 	while(1){
@@ -603,6 +624,7 @@ void input_cou(void){
 	renew_cou();
 	system("cls");
 	cou_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*查询课程信息*/
 void search_cou(void){
@@ -641,6 +663,7 @@ void search_cou_id(void){
 			system("pause");
 			system("cls");
 			cou_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	system("cls");
@@ -648,6 +671,7 @@ void search_cou_id(void){
 	system("pause");
 	system("cls");
 	cou_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*课程名查询*/
 void search_cou_name(void){
@@ -667,6 +691,7 @@ void search_cou_name(void){
 			system("pause");
 			system("cls");
 			cou_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	system("cls");
@@ -674,6 +699,7 @@ void search_cou_name(void){
 	system("pause");
 	system("cls");
 	cou_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 } 
 /*显示所有课程信息*/
 void show_cou(void){
@@ -683,6 +709,7 @@ void show_cou(void){
 		system("pause");
 		system("cls");
 		cou_operate();
+		return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 	}
 	system("cls");
 	printf("\n\n\t代码\t名称\t性质\t总学时\t学分\t开课学期\t选修人数");
@@ -709,8 +736,7 @@ void show_cou(void){
 		default:
 			system("cls");
 			cou_operate();
-			break;
-			
+			break;	
 	} 
 }
 /*编辑课程信息*/
@@ -750,12 +776,14 @@ void edit_cou(void){
 			system("pause"); 
 			system("cls");
 			cou_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	printf("\n此课程号不存在！\n");
 	system("pause");
 	system("cls");
 	cou_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 }
 /*删除课程信息*/
 void delete_cou(void){
@@ -775,6 +803,7 @@ void delete_cou(void){
 				system("pause"); 
 				system("cls");
 				cou_operate();
+				return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 			}
 			//查看是否有人选课
 			if(cou[h].people!=0){//有人选课时
@@ -806,12 +835,14 @@ void delete_cou(void){
 			system("pause"); 
 			system("cls");
 			cou_operate();
+			return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 		}
 	}
 	printf("\n此课程号不存在！\n");
 	system("pause");
 	system("cls");
 	cou_operate();
+	return;//这个是必须的，否则当要求退出系统的时候还是会出现以下的代码 
 }
 
 //--功能函数
@@ -834,7 +865,7 @@ void renew_stu(void){
 		fprintf(fp,"%s\t%s\t%s\t%s\t%s\t%s\t%s\n",stu[h].stu_ID,stu[h].stu_name,stu[h].sex,stu[h].age,stu[h].collage,stu[h].grade,stu[h].contact);
 	}
 	fclose(fp);
-	
+	return; 
 } 
 void renew_cou(void){
 	FILE * fp;
@@ -842,7 +873,7 @@ void renew_cou(void){
 	if(fp == NULL){
 		printf("\n打开文件失败,无法保存至文件。\n");
 		fclose(fp);
-		return ;
+		return;
 	}
 	fprintf(fp,"代码\t名称\t性质\t总学时\t学分\t开课学期\t选修人数\n");
 	if(j == -1){
@@ -853,5 +884,5 @@ void renew_cou(void){
 	for(h = 0;h <= j;h++){
 		fprintf(fp,"%s\t%s\t%s\t%s\t%s\t%s\t\t%s\n",cou[h].course_ID,cou[h].course_name,cou[h].property,cou[h].period,cou[h].credit,cou[h].time,cou[h].people);	}
 	fclose(fp);
-	
+	return;
 } 
